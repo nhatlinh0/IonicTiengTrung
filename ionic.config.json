@@ -1,0 +1,7 @@
+{
+  "name": "IonicTiengTrung",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
