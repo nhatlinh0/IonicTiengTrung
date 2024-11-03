@@ -1,0 +1,84 @@
+<ion-header>
+  <div class="header-container">
+    <img class="header-back" src="./assets/icon/ic_back.png" (click)="navigateToHome()">
+    <h1 class="header-title">
+      Học từ vựng
+    </h1>
+    <div style="height: 50px; width: 50px;"></div>
+  </div>
+</ion-header>
+
+<ion-content class="body">
+  <div class="grid-container" >
+    <!-- cam xuc -->
+    <div class="grid-item" (click)="navigateToCamXuc()">
+      <ion-label class="item-text">感觉</ion-label>
+      <ion-label class="item-text">Cảm xúc</ion-label>
+      <img class="item-img" src="./assets/icon/ic_heart.png" alt="">
+    </div>
+    
+    <!-- gia dinh -->
+    <div class="grid-item" (click)="navigateToGiaDinh()">
+      <ion-label class="item-text">家庭</ion-label>
+      <ion-label class="item-text">Gia đình</ion-label>
+      <img class="item-img" src="./assets/icon/ic_family.png" alt="">
+    </div>
+
+    <!-- giai tri -->
+    <div class="grid-item" (click)="navigateToGiaiTri()">
+      <ion-label class="item-text">娱乐</ion-label>
+      <ion-label class="item-text">Giải trí</ion-label>
+      <img class="item-img" src="./assets/icon/ic_vacation.png" alt="">
+    </div>
+
+    <!-- phong canh -->
+    <div class="grid-item" (click)="navigateToPhongCanh()">
+      <ion-label class="item-text">风景</ion-label>
+      <ion-label class="item-text">Phong cảnh</ion-label>
+      <img class="item-img" src="./assets/icon/ic_mountain.png" alt="">
+    </div>
+
+    <!-- the thao -->
+    <div class="grid-item" (click)="navigateToTheThao()">
+      <ion-label class="item-text">运动</ion-label>
+      <ion-label class="item-text">Thể thao</ion-label>
+      <img class="item-img" src="./assets/icon/ic_sport.png" alt="">
+    </div>
+
+    <!-- thoi gian -->
+    <div class="grid-item" (click)="navigateToThoiGian()">
+      <ion-label class="item-text">时间</ion-label>
+      <ion-label class="item-text">Thời gian</ion-label>
+      <img class="item-img" src="./assets/icon/ic_time.png" alt="">
+    </div>
+
+    <!-- trai cay -->
+    <div class="grid-item" (click)="navigateToTraiCay()">
+      <ion-label class="item-text">水果</ion-label>
+      <ion-label class="item-text">Trái cây</ion-label>
+      <img class="item-img" src="./assets/icon/ic_fruit.png" alt="">
+    </div>
+
+    <!-- van phong -->
+    <div class="grid-item" (click)="navigateToVanPhong()">
+      <ion-label class="item-text">办公室</ion-label>
+      <ion-label class="item-text">Văn phòng</ion-label>
+      <img class="item-img" src="./assets/icon/ic_office.png" alt="">
+    </div>
+
+    <!-- do uong -->
+    <div class="grid-item" (click)="navigateToDoUong()">
+      <ion-label class="item-text">饮料</ion-label>
+      <ion-label class="item-text">Đồ uống</ion-label>
+      <img class="item-img" src="./assets/icon/ic_drink.png" alt="">
+    </div>
+
+    <!-- dong vat -->
+    <div class="grid-item" (click)="navigateToDongVat()">
+      <ion-label class="item-text">动物</ion-label>
+      <ion-label class="item-text">Động vật</ion-label>
+      <img class="item-img" src="./assets/icon/ic_animal.png" alt="">
+    </div>
+  </div>
+</ion-content>
+

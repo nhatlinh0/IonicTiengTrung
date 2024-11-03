@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .body {
+    --background: none;
+    background: url('/assets/icon/background.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Đảm bảo các mục cách đều nhau */
+    margin-top: 10px;
+    overflow-y: scroll;
+  }
+  
+  .grid-item {
+    flex: 1 1 calc(50% - 20px); /* 1/2 chiều rộng trừ đi khoảng cách */
+    max-width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px; /* Khoảng cách giữa các mục */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #fff;
+    transition: all ease 0.5s;
+    &:hover {
+      background-color: #e0e0e0;
+      transform: scale(1.05);
+    }
+  
+  }
+  
+  .grid-item ion-icon {
+    margin-bottom: 10px;
+  }
+  
+  .grid-item ion-label {
+    margin-bottom: 10px;
+  }
+  
+  .grid-item ion-button {
+    --background: #3880ff;
+    --color: white;
+  }
+  
+  
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.item-text {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.item-img {
+  margin: 20px 0;
+}

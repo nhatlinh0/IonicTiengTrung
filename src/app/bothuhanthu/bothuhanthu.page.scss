@@ -1,0 +1,82 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  --background: none;
+  background: url('/assets/icon/background.jpg') no-repeat;
+  background-size: cover;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Đảm bảo các mục cách đều nhau */
+  margin-top: 10px;
+}
+
+.grid-item {
+  flex: 1 1 calc(33.333% - 10px); /* 1/3 chiều rộng trừ đi khoảng cách */
+  max-width: calc(33.333% - 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px; /* Khoảng cách giữa các mục */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.grid-item ion-icon {
+  margin-bottom: 10px;
+}
+
+.grid-item ion-label {
+  margin-bottom: 10px;
+}
+
+.grid-item ion-button {
+  --background: #3880ff;
+  --color: white;
+}
+
+.item-trung {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.item-phienam {
+  font-size: 20px;
+  color: #a1a1a1;
+  padding: 20px 0;
+}
+
+.item-viet {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333ccc;
+  padding: 20px 0;
+}
+
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+}

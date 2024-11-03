@@ -1,0 +1,8 @@
+ion-card {
+    transition: all ease 0.1s;
+    &:hover {
+        background-color: #e0e0e0;
+        transform: scale(1.05);
+      }
+    
+}

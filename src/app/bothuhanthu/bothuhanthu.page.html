@@ -1,0 +1,20 @@
+<ion-header>
+  <div class="header-container">
+    <img class="header-back" src="./assets/icon/ic_back.png" (click)="navigateToHome()">
+    <h1 class="header-title">
+      Bộ Thủ Hán Thư
+    </h1>
+    <div style="height: 50px; width: 50px;"></div>
+  </div>
+</ion-header>
+
+<ion-content class="body">
+  <div class="grid-container">
+    <div *ngFor="let tu of filteredList" class="grid-item">
+      <p  class="item-trung">{{tu.Trung}}</p>
+      <ion-label class="item-phienam">{{ tu.PhienAm }}</ion-label>
+      <div class="line"></div>
+      <p class="item-viet">{{tu.Viet}}</p>
+    </div>
+  </div>
+</ion-content>
