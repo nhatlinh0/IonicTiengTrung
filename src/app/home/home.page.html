@@ -1,4 +1,14 @@
 
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Trang chủ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-router-outlet id="main-content"></ion-router-outlet>
 <ion-content class="ion-padding">
   
   <h1 style="color: #333ccc; font-weight: bold; font-size: 40px;" >
@@ -25,15 +35,15 @@
   <!-- Khoa hoc -->
   <h2 style="margin-top: 20px; font-size: 30px; color: #333ccc;">Chương trình học</h2>
   
-  <!-- Ky nang giao tiep -->
-  <ion-card>
+  <!-- Ky nang nghe -->
+  <ion-card href="/listen">
     <img src="./assets/icon/communicate.jpg" />
     <ion-card-header>
-      <ion-card-title>Kỹ năng giao tiếp</ion-card-title>
+      <ion-card-title>Kỹ năng nghe</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Kỹ năng giao tiếp tiếng Trung được thiết kế nhằm giúp học viên phát triển khả năng giao tiếp hiệu quả trong môi trường sử dụng tiếng Trung.
+      Kỹ năng nghe giúp bạn làm quen với cách phát âm và ngữ điệu của người bản xứ, từ đó cải thiện kỹ năng nói của bạn.
     </ion-card-content>
   </ion-card>
 

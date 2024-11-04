@@ -1,6 +1,15 @@
 import { Injectable, Inject } from '@angular/core';
 import { Database, ref, get, child } from "firebase/database";
-import { Observable } from 'rxjs';
+
+interface FirebaseQuestion {
+  answerA: string;
+  answerB: string;
+  answerC: string;
+  answerD: string;
+  correct: string;
+  title: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,21 +20,68 @@ export class FirebaseService {
 
   constructor(@Inject('Database') private db: Database) {}
 
-  private questions = [
-    { question: "Question 1?", answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"], correct: 0 },
-    { question: "Question 2?", answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"], correct: 1 },
-    // Thêm các câu hỏi khác tại đây
-    { question: "Question 10?", answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"], correct: 3 }
-  ];
-
-  getQuestions() {
-    return this.questions;
+  async getQuestions() {
+    const dbRef = ref(this.db);
+    try {
+      const snapshot = await get(child(dbRef, 'Quiz'));
+      if (snapshot.exists()) {
+        const questions = (snapshot.val() as FirebaseQuestion[]).slice(1).map((q: FirebaseQuestion) => ({
+          question: q.title,
+          answers: [q.answerA, q.answerB, q.answerC, q.answerD],
+          correct: q.correct
+        }));
+        return questions;
+      } else {
+        console.log("No data available");
+        return [];
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
+    }
   }
   
+  async getListenQuestions() {
+    const dbRef = ref(this.db);
+    try {
+      const snapshot = await get(child(dbRef, 'Listen'));
+      if (snapshot.exists()) {
+        const questions = (snapshot.val() as FirebaseQuestion[]).slice(1).map((q: FirebaseQuestion) => ({
+          question: q.title,
+          answers: [q.answerA, q.answerB, q.answerC, q.answerD],
+          correct: q.correct
+        }));
+        return questions;
+      } else {
+        console.log("No data available");
+        return [];
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
+    }
+  }
+
   async getData(path: string) {
     const dbRef = ref(this.db);
     try {
       const snapshot = await get(child(dbRef, path));
+      if (snapshot.exists()) {
+        return snapshot.val();
+      } else {
+        console.log("No data available");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return null;
+    }
+  }
+  
+  async getUsers() {
+    const dbRef = ref(this.db);
+    try {
+      const snapshot = await get(child(dbRef, 'User'));
       if (snapshot.exists()) {
         return snapshot.val();
       } else {

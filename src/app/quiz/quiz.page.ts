@@ -6,7 +6,7 @@ import { FirebaseService } from '../services/firebase.service';
 interface Question {
   question: string;
   answers: string[];
-  correct: number;
+  correct: string;
 }
 
 @Component({
@@ -22,8 +22,8 @@ export class QuizPage implements OnInit {
 
   constructor(private quizService: FirebaseService, private router: Router) { }
 
-  ngOnInit() {
-    this.questions = this.quizService.getQuestions();
+  async ngOnInit() {
+    this.questions = await  this.quizService.getQuestions();
   }
 
   navigateToHome() {
@@ -36,7 +36,8 @@ export class QuizPage implements OnInit {
 
   nextQuestion() {
     if (this.selectedAnswerIndex !== null) {
-      if (this.selectedAnswerIndex === this.questions[this.currentQuestionIndex].correct) {
+      const selectedAnswer = this.questions[this.currentQuestionIndex].answers[this.selectedAnswerIndex];
+      if (selectedAnswer === this.questions[this.currentQuestionIndex].correct) {
         this.score++;
       }
       this.currentQuestionIndex++;

@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .selected-answer {
+    background-color: #369e55; // Màu nền cho đáp án đã chọn
+    animation: select-animation 0.5s ease-in-out;
+  }
+  
+  .header-title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+  .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+  }
+  
+  .body {
+    margin: 20px;
+  }
+  
+  .question-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .question-answer-container {
+    --background: none;
+    border-radius: 10px;
+  }
+  
+  .question-answer{
+    --background: none;
+    --inner-border-width: 0px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 20px 20px ;
+  }
+  
+  .question {
+    color: #fff;
+    padding: 10px;
+  }
+  
+  ion-button {
+    --background:none;
+    --border-radius: 20px;
+    border-radius: 20px !important;
+    background-color: #3382cc;
+    margin-top: 20px;
+  }
+  
+  .audio {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.5s ease;
+  }
+
+  .audio.active {
+    animation: audio 1s ease-in-out;
+  }
+
+  @keyframes select-animation {
+    0% {
+      transform: scale(1);
+      background-color: #10e24f;
+    }
+    50% {
+      transform: scale(1.05);
+      background-color: #086423;
+    }
+    100% {
+      transform: scale(1);
+      background-color: #369e55;
+    }
+  }
+
+  @keyframes audio {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
