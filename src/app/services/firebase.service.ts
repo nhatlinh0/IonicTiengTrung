@@ -11,7 +11,17 @@ export class FirebaseService {
 
   constructor(@Inject('Database') private db: Database) {}
 
+  private questions = [
+    { question: "Question 1?", answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"], correct: 0 },
+    { question: "Question 2?", answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"], correct: 1 },
+    // Thêm các câu hỏi khác tại đây
+    { question: "Question 10?", answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"], correct: 3 }
+  ];
 
+  getQuestions() {
+    return this.questions;
+  }
+  
   async getData(path: string) {
     const dbRef = ref(this.db);
     try {

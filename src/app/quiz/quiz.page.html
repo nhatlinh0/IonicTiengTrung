@@ -1,0 +1,30 @@
+<ion-header>
+  <div class="header-container">
+    <img class="header-back" src="./assets/icon/ic_back.png" (click)="navigateToHome()">
+    <h1 class="header-title">
+      Trắc nghiệm
+    </h1>
+    <div style="height: 50px; width: 50px;"></div>
+  </div>
+</ion-header>
+
+<ion-content style="  --background: none;
+background: url('/assets/icon/background.jpg') no-repeat;
+background-size: cover;" >
+  <div class="body" *ngIf="currentQuestionIndex < questions.length">
+    <ion-progress-bar value="{{ currentQuestionIndex / questions.length }}"></ion-progress-bar>
+    <div class="question-container">
+      <h2 class="question">{{ questions[currentQuestionIndex].question }}</h2>
+    </div>
+    <ion-list class="question-answer-container">
+      <ion-item class="question-answer" *ngFor="let answer of questions[currentQuestionIndex].answers; let i = index" 
+      [class.selected-answer]="selectedAnswerIndex === i" 
+      (click)="selectAnswer(i)">
+        {{ answer }}
+      </ion-item>
+      <ion-button style="margin: 20px;" expand="full" (click)="nextQuestion()" [disabled]="selectedAnswerIndex === null">
+        Next
+      </ion-button>
+    </ion-list>
+  </div>
+</ion-content>

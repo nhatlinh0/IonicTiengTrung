@@ -65,6 +65,14 @@ const routes: Routes = [
   {
     path: 'dongvat',
     loadChildren: () => import('./dongvat/dongvat.module').then( m => m.DongvatPageModule)
+  },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./quiz/quiz.module').then( m => m.QuizPageModule)
+  },
+  {
+    path: 'result',
+    loadChildren: () => import('./result/result.module').then( m => m.ResultPageModule)
   }
 ];
 @NgModule({

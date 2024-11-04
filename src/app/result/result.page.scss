@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .selected-answer {
+    background-color: #369e55; // Màu nền cho đáp án đã chọn
+    animation: select-animation 0.5s ease-in-out;
+  }
+  
+  .header-title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+  .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+  }
+  

@@ -1,0 +1,25 @@
+<ion-header>
+  <div class="header-container">
+    <img class="header-back" src="./assets/icon/ic_back.png" (click)="navigateToHome()">
+    <h1 class="header-title">
+      Kết quả
+    </h1>
+    <div style="height: 50px; width: 50px;"></div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div>
+    <h2 style="font-weight: bold; text-align: center; color:#369e55;">Chúc mừng</h2>
+    <div style="display: flex; justify-content: center; align-items: center;margin: 0;">
+      <img style="width: 200px; height: 200px; " src="./assets/icon/result.jpg" alt="">
+    </div>
+    <p style="color: #b4b3b3; font-size: 20px; text-align: center;">Bạn đã hoàn thành bài kiểm tra</p>
+    <div style="background-color: #dddbdb; height: 250px; margin: 20px; border-radius: 10px; padding: 20px;">
+      <h2 style="text-align: center;">ĐIỂM</h2>
+      <h2 style="font-size: 40px; text-align: center; margin-top: 40px;"> {{ score }} / {{ totalQuestions }}</h2>
+      <div style="width: 80%; margin: 0 auto; height: 2px; background-color: #5484cc; margin-top:20px ;"></div>
+    </div>
+      <ion-button  expand="full" (click)="restart()">Trở về</ion-button>
+  </div>
+</ion-content>
