@@ -77,6 +77,10 @@ const routes: Routes = [
   {
     path: 'listen',
     loadChildren: () => import('./listen/listen.module').then( m => m.ListenPageModule)
+  },
+  {
+    path: 'cauthongdung',
+    loadChildren: () => import('./cauthongdung/cauthongdung.module').then( m => m.CauthongdungPageModule)
   }
 ];
 @NgModule({

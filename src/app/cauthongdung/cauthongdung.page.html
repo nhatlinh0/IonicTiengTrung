@@ -1,0 +1,46 @@
+<ion-header>
+  <div class="header-container">
+    <img class="header-back" src="./assets/icon/ic_back.png" (click)="navigateToHome()">
+    <h1 class="header-title">
+      Câu thông dụng
+    </h1>
+    <div style="height: 50px; width: 50px;"></div>
+  </div>
+</ion-header>
+
+<ion-content class="body">
+
+  <div class="content-section" *ngIf="chuDe1Cau.length > 0">
+    <h2 class="section-title">Câu nói thường ngày - Chủ đề 1</h2>
+    <ng-container *ngFor="let cau of chuDe1Cau">
+      <ion-card class="chu-de-card" *ngIf="cau?.Trung">
+        <ion-card-content class="item">
+          <p>
+            <strong>Tiếng Trung:</strong> {{ cau?.Trung }}
+
+            <ion-icon name="volume-high-outline" (click)="playAudio(cau.Trung)" style="margin-left: 10px; cursor: pointer;"></ion-icon>
+          </p>
+          <p><strong>Phiên Âm:</strong> {{ cau?.PhienAm }}</p> <!-- Đưa Phiên Âm xuống dưới -->
+          <p><strong>Tiếng Việt:</strong> {{ cau?.Viet }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </div>
+
+  <div class="content-section" *ngIf="chuDe2Cau.length > 0">
+    <h2 class="section-title">Câu nói thường ngày - Chủ đề 2</h2>
+    <ng-container *ngFor="let cau of chuDe2Cau">
+      <ion-card class="chu-de-card" *ngIf="cau?.Trung">
+        <ion-card-content>
+          <p>
+            <strong>Tiếng Trung:</strong> {{ cau?.Trung }}
+            <!-- Biểu tượng phát âm -->
+            <ion-icon name="volume-high-outline" (click)="playAudio(cau.Trung)" style="margin-left: 10px; cursor: pointer;"></ion-icon>
+          </p>
+          <p><strong>Phiên Âm:</strong> {{ cau?.PhienAm }}</p> <!-- Đưa Phiên Âm xuống dưới -->
+          <p><strong>Tiếng Việt:</strong> {{ cau?.Viet }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </div>
+</ion-content>
